@@ -25,7 +25,7 @@ import java.awt.*;
  */
 @Log4j2
 @Getter
-public class SimulatedEvolutionCanvas extends JComponent {
+public class ConwaysGameOfLiveCanvas extends JComponent {
 
     static final long serialVersionUID = 242L;
 
@@ -37,7 +37,7 @@ public class SimulatedEvolutionCanvas extends JComponent {
     private final Color WATER = Color.BLACK;
     private final Color FOOD = Color.GREEN;
 
-    public SimulatedEvolutionCanvas(ConwaysGameOfLiveModel tabModel) {
+    public ConwaysGameOfLiveCanvas(ConwaysGameOfLiveModel tabModel) {
         this.tabModel = tabModel;
         this.setBackground(WATER);
         this.setSize(this.tabModel.getWorldDimensions().getX(), this.tabModel.getWorldDimensions().getY());

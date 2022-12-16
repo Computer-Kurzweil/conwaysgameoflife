@@ -2,7 +2,7 @@ package org.woehlke.computer.kurzweil.simulated.evolution.control;
 
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.SimulatedEvolutionCanvas;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.ConwaysGameOfLiveCanvas;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.ConwaysGameOfLiveModel;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.population.PopulationStatisticsElementsPanelLifeCycle;
 
@@ -34,7 +34,7 @@ public class ConwaysGameOfLiveController extends Thread implements Runnable, Ser
     /**
      * Canvas, where to paint in the GUI.
      */
-    private final SimulatedEvolutionCanvas canvas;
+    private final ConwaysGameOfLiveCanvas canvas;
     private final PopulationStatisticsElementsPanelLifeCycle panelLifeCycle;
     private final ConwaysGameOfLiveTab tab;
 
@@ -50,7 +50,7 @@ public class ConwaysGameOfLiveController extends Thread implements Runnable, Ser
 
     public ConwaysGameOfLiveController(
         ConwaysGameOfLiveModel conwaysGameOfLiveModel,
-        SimulatedEvolutionCanvas canvas,
+        ConwaysGameOfLiveCanvas canvas,
         PopulationStatisticsElementsPanelLifeCycle panelLifeCycle,
         ConwaysGameOfLiveTab conwaysGameOfLiveTab
     ) {

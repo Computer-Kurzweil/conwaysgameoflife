@@ -6,7 +6,7 @@ import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweil
 import org.woehlke.computer.kurzweil.simulated.evolution.control.ConwaysGameOfLiveController;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.ConwaysGameOfLiveModel;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.SimulatedEvolutionParameter;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.SimulatedEvolutionCanvas;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.ConwaysGameOfLiveCanvas;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.population.PopulationStatisticsElementsPanelLifeCycle;
 
 import javax.accessibility.Accessible;
@@ -30,7 +30,7 @@ import static javax.swing.SwingConstants.CENTER;
  *
  * @see ConwaysGameOfLiveModel
  * @see ConwaysGameOfLiveController
- * @see SimulatedEvolutionCanvas
+ * @see ConwaysGameOfLiveCanvas
  * @see PopulationStatisticsElementsPanelLifeCycle
  *
  * @see ComputerKurzweilProperties
@@ -86,7 +86,7 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
     /**
      * The View for the World. Food and Cells are painted to the Canvas.
      */
-    private final SimulatedEvolutionCanvas canvas;
+    private final ConwaysGameOfLiveCanvas canvas;
 
     /**
      * Data Model for the Simulation. The World contains the Bacteria Cells and the Food.
@@ -108,7 +108,7 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
         this.conwaysGameOfLiveModel = new ConwaysGameOfLiveModel(
             computerKurzweilProperties
         );
-        this.canvas = new SimulatedEvolutionCanvas(this.conwaysGameOfLiveModel);
+        this.canvas = new ConwaysGameOfLiveCanvas(this.conwaysGameOfLiveModel);
         this.panelLifeCycle = new PopulationStatisticsElementsPanelLifeCycle(
             this,
             this.conwaysGameOfLiveModel.getConwaysgameoflifePopulationCensusContainer()
