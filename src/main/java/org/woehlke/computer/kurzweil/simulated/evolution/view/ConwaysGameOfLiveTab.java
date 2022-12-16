@@ -54,7 +54,7 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
 
     static final long serialVersionUID = 242L;
 
-    private final static String TITLE = "AAAASDF";
+    private final static String TITLE = "Conways Game of Life";
 
     private final static int EXIT_STATUS = 0;
 
