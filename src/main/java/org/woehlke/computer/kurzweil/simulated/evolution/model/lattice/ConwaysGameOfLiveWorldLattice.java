@@ -25,7 +25,7 @@ import java.util.Random;
 @Log4j2
 @ToString(exclude = {"random"})
 @EqualsAndHashCode(exclude = {"random"})
-public class SimulatedEvolutionWorldLattice implements Serializable {
+public class ConwaysGameOfLiveWorldLattice implements Serializable {
 
     private static final long serialVersionUID = 242L;
 
@@ -55,7 +55,7 @@ public class SimulatedEvolutionWorldLattice implements Serializable {
      */
     private WorldPoint dimensions;
 
-    public SimulatedEvolutionWorldLattice(WorldPoint dimensions, Random random){
+    public ConwaysGameOfLiveWorldLattice(WorldPoint dimensions, Random random){
         this.dimensions=dimensions;
         worldMapFood = new int[this.dimensions.getX()][this.dimensions.getY()];
         this.random=random;

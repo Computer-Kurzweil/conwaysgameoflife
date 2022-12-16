@@ -10,7 +10,7 @@ import org.woehlke.computer.kurzweil.simulated.evolution.model.cell.Cell;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.census.SimulatedEvolutionPopulationCensus;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.census.SimulatedEvolutionPopulationCensusContainer;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.SimulatedEvolutionParameter;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.lattice.SimulatedEvolutionWorldLattice;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.lattice.ConwaysGameOfLiveWorldLattice;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.WorldPoint;
 
 import java.io.Serializable;
@@ -27,7 +27,7 @@ import java.util.Random;
  * @author Thomas Woehlke
  *
  * @see Cell
- * @see SimulatedEvolutionWorldLattice
+ * @see ConwaysGameOfLiveWorldLattice
  *
  * @see <a href="https://thomas-woehlke.blogspot.com/2016/01/mandelbrot-set-drawn-by-turing-machine.html">Blog Article</a>
  * @see <a href="https://github.com/Computer-Kurzweil/simulated-evolution">Github Repository</a>
@@ -68,7 +68,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
     /**
      * Map of the World monitoring growth and eating food.
      */
-    private final SimulatedEvolutionWorldLattice simulatedEvolutionWorldLattice;
+    private final ConwaysGameOfLiveWorldLattice conwaysGameOfLiveWorldLattice;
 
     @Getter
     private final SimulatedEvolutionPopulationCensusContainer simulatedEvolutionPopulationCensusContainer;
@@ -87,7 +87,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
         this.worldDimensions = new WorldPoint(width,height);
         long seed = new Date().getTime();
         this.random = new Random(seed);
-        this.simulatedEvolutionWorldLattice = new SimulatedEvolutionWorldLattice(
+        this.conwaysGameOfLiveWorldLattice = new ConwaysGameOfLiveWorldLattice(
             this.worldDimensions, this.random
         );
         this.simulatedEvolutionPopulationCensusContainer = new SimulatedEvolutionPopulationCensusContainer(
@@ -126,7 +126,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
      */
     public boolean letLivePopulation() {
         SimulatedEvolutionPopulationCensus populationCensus = new SimulatedEvolutionPopulationCensus();
-        simulatedEvolutionWorldLattice.letFoodGrow();
+        conwaysGameOfLiveWorldLattice.letFoodGrow();
         WorldPoint pos;
         List<Cell> children = new ArrayList<Cell>();
         List<Cell> died = new ArrayList<Cell>();
@@ -136,7 +136,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
                 died.add(cell);
             } else {
                 pos = cell.getPosition();
-                int food = simulatedEvolutionWorldLattice.eat(pos);
+                int food = conwaysGameOfLiveWorldLattice.eat(pos);
                 cell.eat(food);
                 if (cell.isPregnant()) {
                     Cell child = cell.performReproductionByCellDivision();
@@ -160,7 +160,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
     }
 
     public boolean hasFood(int x, int y) {
-        return simulatedEvolutionWorldLattice.hasFood(x,y);
+        return conwaysGameOfLiveWorldLattice.hasFood(x,y);
     }
 
     public boolean isPopulationAlive() {
