@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.simulated.evolution.control.SimulatedEvolutionController;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.SimulatedEvolutionModel;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.ConwaysGameOfLiveModel;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.SimulatedEvolutionParameter;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.SimulatedEvolutionCanvas;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.population.PopulationStatisticsElementsPanelLifeCycle;
@@ -28,7 +28,7 @@ import static javax.swing.SwingConstants.CENTER;
  * &copy; 2006 - 2008 Thomas Woehlke.
  * @author Thomas Woehlke
  *
- * @see SimulatedEvolutionModel
+ * @see ConwaysGameOfLiveModel
  * @see SimulatedEvolutionController
  * @see SimulatedEvolutionCanvas
  * @see PopulationStatisticsElementsPanelLifeCycle
@@ -91,7 +91,7 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
     /**
      * Data Model for the Simulation. The World contains the Bacteria Cells and the Food.
      */
-    private final SimulatedEvolutionModel simulatedEvolutionModel;
+    private final ConwaysGameOfLiveModel conwaysGameOfLiveModel;
 
     /**
      * Display how many Cells per LifeCycleStatus and how many Cells in the whole Population for this Generation.
@@ -105,16 +105,16 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
     public ConwaysGameOfLiveTab(ComputerKurzweilProperties computerKurzweilProperties) {
         super(TITLE);
         this.computerKurzweilProperties = computerKurzweilProperties;
-        this.simulatedEvolutionModel = new SimulatedEvolutionModel(
+        this.conwaysGameOfLiveModel = new ConwaysGameOfLiveModel(
             computerKurzweilProperties
         );
-        this.canvas = new SimulatedEvolutionCanvas(this.simulatedEvolutionModel);
+        this.canvas = new SimulatedEvolutionCanvas(this.conwaysGameOfLiveModel);
         this.panelLifeCycle = new PopulationStatisticsElementsPanelLifeCycle(
             this,
-            this.simulatedEvolutionModel.getSimulatedEvolutionPopulationCensusContainer()
+            this.conwaysGameOfLiveModel.getSimulatedEvolutionPopulationCensusContainer()
         );
         this.simulatedEvolutionController = new SimulatedEvolutionController(
-            this.simulatedEvolutionModel, this.canvas, this.panelLifeCycle, this
+            this.conwaysGameOfLiveModel, this.canvas, this.panelLifeCycle, this
         );
         String subTitle =  computerKurzweilProperties.getConwaysgameoflife().getView().getSubtitle();
         String copyright =  computerKurzweilProperties.getConwaysgameoflife().getView().getCopyright();
@@ -136,8 +136,8 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
     public void showMeInit() {
         pack();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        double width =  this.simulatedEvolutionModel.getWorldDimensions().getX();
-        double height = this.simulatedEvolutionModel.getWorldDimensions().getY() + 60;
+        double width =  this.conwaysGameOfLiveModel.getWorldDimensions().getX();
+        double height = this.conwaysGameOfLiveModel.getWorldDimensions().getY() + 60;
         double startX = (screenSize.getWidth() - width) / 2d;
         double startY = (screenSize.getHeight() - height) / 2d;
         int myheight = Double.valueOf(height).intValue();
@@ -173,8 +173,8 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
     }
 
     private void setMyBounds(){
-        int height = this.simulatedEvolutionModel.getWorldDimensions().getY();
-        int width = this.simulatedEvolutionModel.getWorldDimensions().getX();
+        int height = this.conwaysGameOfLiveModel.getWorldDimensions().getY();
+        int width = this.conwaysGameOfLiveModel.getWorldDimensions().getX();
         int TITLE_HEIGHT = HEIGHT_OF_TITLE + HEIGHT_OF_STATISTICS;
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         double startX = (screenSize.getWidth() - height) / 2d;

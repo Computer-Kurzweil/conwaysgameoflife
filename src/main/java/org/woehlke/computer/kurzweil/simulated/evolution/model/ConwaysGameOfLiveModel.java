@@ -40,7 +40,7 @@ import java.util.Random;
 @Log4j2
 @ToString(exclude = {"random"})
 @EqualsAndHashCode(exclude = {"random"})
-public class SimulatedEvolutionModel implements Serializable {
+public class ConwaysGameOfLiveModel implements Serializable {
 
     static final long serialVersionUID = 242L;
 
@@ -79,7 +79,7 @@ public class SimulatedEvolutionModel implements Serializable {
     @Getter
     private final ComputerKurzweilProperties computerKurzweilProperties;
 
-    public SimulatedEvolutionModel(ComputerKurzweilProperties computerKurzweilProperties) {
+    public ConwaysGameOfLiveModel(ComputerKurzweilProperties computerKurzweilProperties) {
         this.computerKurzweilProperties = computerKurzweilProperties;
         int scale = this.computerKurzweilProperties.getConwaysgameoflife().getView().getScale();
         int width = scale * this.computerKurzweilProperties.getConwaysgameoflife().getView().getWidth();

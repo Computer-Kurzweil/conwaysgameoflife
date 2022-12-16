@@ -6,7 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.SubTabImpl;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.TabPanel;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.SimulatedEvolutionModel;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.ConwaysGameOfLiveModel;
 
 import java.io.Serializable;
 
@@ -33,7 +33,7 @@ public class FoodPerDayPanel extends SubTabImpl implements Serializable {
     private final FoodPerDayTextField foodPerDayTextField;
     private final FoodPerDayIncreaseButton foodPerDayIncreaseButton;
     private final FoodPerDayDecreaseButton foodPerDayDecreaseButton;
-    private final SimulatedEvolutionModel tabModel;
+    private final ConwaysGameOfLiveModel tabModel;
 
     public FoodPerDayPanel(ConwaysGameOfLiveTab tab) {
         super(
@@ -41,7 +41,7 @@ public class FoodPerDayPanel extends SubTabImpl implements Serializable {
             tab.getComputerKurzweilProperties()
         );
         this.tab = tab;
-        this.tabModel = this.tab.getSimulatedEvolutionModel();
+        this.tabModel = this.tab.getConwaysGameOfLiveModel();
         this.foodPerDayLabel = new FoodPerDayLabel(this.tab);
         this.foodPerDayTextField = new FoodPerDayTextField(this.tab);
         this.foodPerDayIncreaseButton = new FoodPerDayIncreaseButton(this.tab);

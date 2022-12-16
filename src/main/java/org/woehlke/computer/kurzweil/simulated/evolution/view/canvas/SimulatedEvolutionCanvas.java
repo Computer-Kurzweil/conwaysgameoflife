@@ -1,11 +1,10 @@
 package org.woehlke.computer.kurzweil.simulated.evolution.view.canvas;
 
 import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.cell.Cell;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.WorldPoint;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.SimulatedEvolutionModel;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.ConwaysGameOfLiveModel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -33,12 +32,12 @@ public class SimulatedEvolutionCanvas extends JComponent {
     /**
      * Reference to the Data Model.
      */
-    private final SimulatedEvolutionModel tabModel;
+    private final ConwaysGameOfLiveModel tabModel;
 
     private final Color WATER = Color.BLACK;
     private final Color FOOD = Color.GREEN;
 
-    public SimulatedEvolutionCanvas(SimulatedEvolutionModel tabModel) {
+    public SimulatedEvolutionCanvas(ConwaysGameOfLiveModel tabModel) {
         this.tabModel = tabModel;
         this.setBackground(WATER);
         this.setSize(this.tabModel.getWorldDimensions().getX(), this.tabModel.getWorldDimensions().getY());

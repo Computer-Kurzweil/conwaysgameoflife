@@ -6,7 +6,7 @@ import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.SubTabImpl;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.TabPanel;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.SimulatedEvolutionModel;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.ConwaysGameOfLiveModel;
 
 import java.io.Serializable;
 
@@ -29,7 +29,7 @@ public class GardenOfEdenPanelRow extends SubTabImpl implements Serializable {
     @ToString.Exclude
     private final ConwaysGameOfLiveTab tab;
     @ToString.Exclude
-    private final SimulatedEvolutionModel tabModel;
+    private final ConwaysGameOfLiveModel tabModel;
     private final GardenOfEdenCheckBox gardenOfEdenEnabled;
     private final GardenOfEdenToggleButton buttonToggleGardenOfEden;
     //private final GardenOfEdenPanel gardenOfEdenPanel;
@@ -37,7 +37,7 @@ public class GardenOfEdenPanelRow extends SubTabImpl implements Serializable {
     public GardenOfEdenPanelRow(ConwaysGameOfLiveTab tab) {
         super("Garden of Eden",tab.getComputerKurzweilProperties());
         this.tab = tab;
-        this.tabModel = this.tab.getSimulatedEvolutionModel();
+        this.tabModel = this.tab.getConwaysGameOfLiveModel();
         this.gardenOfEdenEnabled = new GardenOfEdenCheckBox(this.tab);
         this.buttonToggleGardenOfEden = new GardenOfEdenToggleButton(this.tab);
         /*

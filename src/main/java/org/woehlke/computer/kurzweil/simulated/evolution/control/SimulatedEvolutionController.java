@@ -3,7 +3,7 @@ package org.woehlke.computer.kurzweil.simulated.evolution.control;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.SimulatedEvolutionCanvas;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.SimulatedEvolutionModel;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.ConwaysGameOfLiveModel;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.population.PopulationStatisticsElementsPanelLifeCycle;
 
 import java.io.Serializable;
@@ -29,7 +29,7 @@ public class SimulatedEvolutionController extends Thread implements Runnable, Se
     /**
      * Data Model for the Simulation
      */
-    private final SimulatedEvolutionModel simulatedEvolutionModel;
+    private final ConwaysGameOfLiveModel conwaysGameOfLiveModel;
 
     /**
      * Canvas, where to paint in the GUI.
@@ -49,12 +49,12 @@ public class SimulatedEvolutionController extends Thread implements Runnable, Se
     private Boolean mySemaphore;
 
     public SimulatedEvolutionController(
-        SimulatedEvolutionModel simulatedEvolutionModel,
+        ConwaysGameOfLiveModel conwaysGameOfLiveModel,
         SimulatedEvolutionCanvas canvas,
         PopulationStatisticsElementsPanelLifeCycle panelLifeCycle,
         ConwaysGameOfLiveTab conwaysGameOfLiveTab
     ) {
-        this.simulatedEvolutionModel = simulatedEvolutionModel;
+        this.conwaysGameOfLiveModel = conwaysGameOfLiveModel;
         this.canvas = canvas;
         this.panelLifeCycle = panelLifeCycle;
         this.tab = conwaysGameOfLiveTab;
@@ -69,7 +69,7 @@ public class SimulatedEvolutionController extends Thread implements Runnable, Se
             synchronized (mySemaphore) {
                 doMyJob = mySemaphore.booleanValue();
             }
-            doMyJob = simulatedEvolutionModel.letLivePopulation();
+            doMyJob = conwaysGameOfLiveModel.letLivePopulation();
             canvas.repaint();
             panelLifeCycle.update();
             panelLifeCycle.repaint();
