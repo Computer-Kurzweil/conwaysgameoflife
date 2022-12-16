@@ -23,9 +23,9 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-public class SimulatedEvolutionPopulationCensus implements Serializable {
+public class ConwaysGameOfLivePopulationCensus implements Serializable {
 
-   private static final long serialVersionUID = 242L;
+    static final long serialVersionUID = 242L;
 
    private int youngCells;
    private int youngAndFatCells;

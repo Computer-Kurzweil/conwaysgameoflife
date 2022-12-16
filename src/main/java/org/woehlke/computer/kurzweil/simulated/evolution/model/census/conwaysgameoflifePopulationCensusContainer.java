@@ -22,28 +22,28 @@ import java.util.Stack;
 @Log4j2
 @ToString(callSuper = true, exclude={"statistics"})
 @EqualsAndHashCode(exclude={"statistics"})
-public class SimulatedEvolutionPopulationCensusContainer implements Serializable {
+public class conwaysgameoflifePopulationCensusContainer implements Serializable {
 
     static final long serialVersionUID = 242L;
 
     private final int queueMaxLength;
 
-    private final Stack<SimulatedEvolutionPopulationCensus> statistics =
+    private final Stack<ConwaysGameOfLivePopulationCensus> statistics =
         new Stack<>();
 
-    private volatile SimulatedEvolutionPopulationCensus currentPopulationCensus;
+    private volatile ConwaysGameOfLivePopulationCensus currentPopulationCensus;
 
     @Getter
     private volatile long worldIteration;
 
-    public SimulatedEvolutionPopulationCensusContainer(
+    public conwaysgameoflifePopulationCensusContainer(
         ComputerKurzweilProperties p
     ) {
         this.queueMaxLength = p.getSimulatedevolution().getControl().getQueueMaxLength();
         this.worldIteration = 0L;
     }
 
-    public synchronized void push(SimulatedEvolutionPopulationCensus populationCensus) {
+    public synchronized void push(ConwaysGameOfLivePopulationCensus populationCensus) {
         this.currentPopulationCensus = populationCensus;
         this.worldIteration++;
         populationCensus.setWorldIteration(worldIteration);
@@ -54,9 +54,9 @@ public class SimulatedEvolutionPopulationCensusContainer implements Serializable
         log.info(worldIteration + " : " + populationCensus.toString());
     }
 
-    public synchronized SimulatedEvolutionPopulationCensus peek() {
+    public synchronized ConwaysGameOfLivePopulationCensus peek() {
         if(null == this.currentPopulationCensus) {
-            SimulatedEvolutionPopulationCensus populationCensus = new SimulatedEvolutionPopulationCensus();
+            ConwaysGameOfLivePopulationCensus populationCensus = new ConwaysGameOfLivePopulationCensus();
             populationCensus.setWorldIteration(worldIteration);
             statistics.push(populationCensus);
         }

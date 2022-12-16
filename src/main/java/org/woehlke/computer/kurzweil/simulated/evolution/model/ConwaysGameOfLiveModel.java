@@ -7,8 +7,8 @@ import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.cell.Cell;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.census.SimulatedEvolutionPopulationCensus;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.census.SimulatedEvolutionPopulationCensusContainer;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.census.ConwaysGameOfLivePopulationCensus;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.census.conwaysgameoflifePopulationCensusContainer;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.SimulatedEvolutionParameter;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.lattice.ConwaysGameOfLiveWorldLattice;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.WorldPoint;
@@ -71,7 +71,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
     private final ConwaysGameOfLiveWorldLattice conwaysGameOfLiveWorldLattice;
 
     @Getter
-    private final SimulatedEvolutionPopulationCensusContainer simulatedEvolutionPopulationCensusContainer;
+    private final conwaysgameoflifePopulationCensusContainer conwaysgameoflifePopulationCensusContainer;
 
     @Getter
     private final SimulatedEvolutionParameter simulatedEvolutionParameter;
@@ -90,7 +90,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
         this.conwaysGameOfLiveWorldLattice = new ConwaysGameOfLiveWorldLattice(
             this.worldDimensions, this.random
         );
-        this.simulatedEvolutionPopulationCensusContainer = new SimulatedEvolutionPopulationCensusContainer(
+        this.conwaysgameoflifePopulationCensusContainer = new conwaysgameoflifePopulationCensusContainer(
             computerKurzweilProperties
         );
         this.simulatedEvolutionParameter = new SimulatedEvolutionParameter();
@@ -101,7 +101,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
      * Create the initial Population of Bacteria Cells and give them their position in the World.
      */
     private void createPopulation() {
-        SimulatedEvolutionPopulationCensus populationCensus = new SimulatedEvolutionPopulationCensus();
+        ConwaysGameOfLivePopulationCensus populationCensus = new ConwaysGameOfLivePopulationCensus();
         cells = new ArrayList<Cell>();
         for (int i = 0; i < INITIAL_POPULATION; i++) {
             int x = random.nextInt(worldDimensions.getX());
@@ -117,7 +117,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
             cells.add(cell);
             populationCensus.countStatusOfOneCell(cell.getLifeCycleStatus());
         }
-        this.simulatedEvolutionPopulationCensusContainer.push(populationCensus);
+        this.conwaysgameoflifePopulationCensusContainer.push(populationCensus);
     }
 
     /**
@@ -125,7 +125,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
      * Every Cell moves, eats, dies of hunger, and it has sex: splitting into two children with changed DNA.
      */
     public boolean letLivePopulation() {
-        SimulatedEvolutionPopulationCensus populationCensus = new SimulatedEvolutionPopulationCensus();
+        ConwaysGameOfLivePopulationCensus populationCensus = new ConwaysGameOfLivePopulationCensus();
         conwaysGameOfLiveWorldLattice.letFoodGrow();
         WorldPoint pos;
         List<Cell> children = new ArrayList<Cell>();
@@ -151,7 +151,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
         for (Cell cell:cells) {
             populationCensus.countStatusOfOneCell(cell.getLifeCycleStatus());
         }
-        this.simulatedEvolutionPopulationCensusContainer.push(populationCensus);
+        this.conwaysgameoflifePopulationCensusContainer.push(populationCensus);
         return ! cells.isEmpty();
     }
 

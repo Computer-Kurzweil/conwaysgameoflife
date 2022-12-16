@@ -5,11 +5,11 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.census.SimulatedEvolutionPopulationCensusContainer;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.census.conwaysgameoflifePopulationCensusContainer;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.layouts.FlowLayoutCenter;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.SubTabImpl;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.census.SimulatedEvolutionPopulationCensus;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.census.ConwaysGameOfLivePopulationCensus;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
@@ -59,11 +59,11 @@ public class PopulationStatisticsElementsPanelLifeCycle extends SubTabImpl imple
 
     private final ConwaysGameOfLiveTab tab;
 
-    private final SimulatedEvolutionPopulationCensusContainer censusContainer;
+    private final conwaysgameoflifePopulationCensusContainer censusContainer;
 
     public PopulationStatisticsElementsPanelLifeCycle(
         ConwaysGameOfLiveTab tab,
-        SimulatedEvolutionPopulationCensusContainer censusContainer
+        conwaysgameoflifePopulationCensusContainer censusContainer
     ) {
         super(
             tab.getComputerKurzweilProperties().getConwaysgameoflife().getPopulation().getPanelPopulationStatistics(),
@@ -104,7 +104,7 @@ public class PopulationStatisticsElementsPanelLifeCycle extends SubTabImpl imple
     }
 
     public void update() {
-        SimulatedEvolutionPopulationCensus population = this.censusContainer.peek();
+        ConwaysGameOfLivePopulationCensus population = this.censusContainer.peek();
         youngCellsElement.setText(population.getYoungCells());
         youngAndFatCellsElement.setText(population.getYoungAndFatCells());
         fullAgeCellsElement.setText(population.getFullAgeCells());

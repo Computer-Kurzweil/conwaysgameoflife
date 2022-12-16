@@ -111,7 +111,7 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
         this.canvas = new SimulatedEvolutionCanvas(this.conwaysGameOfLiveModel);
         this.panelLifeCycle = new PopulationStatisticsElementsPanelLifeCycle(
             this,
-            this.conwaysGameOfLiveModel.getSimulatedEvolutionPopulationCensusContainer()
+            this.conwaysGameOfLiveModel.getConwaysgameoflifePopulationCensusContainer()
         );
         this.simulatedEvolutionController = new SimulatedEvolutionController(
             this.conwaysGameOfLiveModel, this.canvas, this.panelLifeCycle, this
