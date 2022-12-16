@@ -22,7 +22,7 @@ import java.io.Serializable;
  * Time: 00:36:20
  */
 @Log4j2
-public class SimulatedEvolutionController extends Thread implements Runnable, Serializable {
+public class ConwaysGameOfLiveController extends Thread implements Runnable, Serializable {
 
     static final long serialVersionUID = 242L;
 
@@ -48,7 +48,7 @@ public class SimulatedEvolutionController extends Thread implements Runnable, Se
      */
     private Boolean mySemaphore;
 
-    public SimulatedEvolutionController(
+    public ConwaysGameOfLiveController(
         ConwaysGameOfLiveModel conwaysGameOfLiveModel,
         SimulatedEvolutionCanvas canvas,
         PopulationStatisticsElementsPanelLifeCycle panelLifeCycle,

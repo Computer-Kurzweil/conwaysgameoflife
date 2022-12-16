@@ -8,7 +8,7 @@ import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.cell.Cell;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.census.ConwaysGameOfLivePopulationCensus;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.census.conwaysgameoflifePopulationCensusContainer;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.census.ConwaysGameOfLifePopulationCensusContainer;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.SimulatedEvolutionParameter;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.lattice.ConwaysGameOfLiveWorldLattice;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.WorldPoint;
@@ -71,7 +71,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
     private final ConwaysGameOfLiveWorldLattice conwaysGameOfLiveWorldLattice;
 
     @Getter
-    private final conwaysgameoflifePopulationCensusContainer conwaysgameoflifePopulationCensusContainer;
+    private final ConwaysGameOfLifePopulationCensusContainer conwaysgameoflifePopulationCensusContainer;
 
     @Getter
     private final SimulatedEvolutionParameter simulatedEvolutionParameter;
@@ -90,7 +90,7 @@ public class ConwaysGameOfLiveModel implements Serializable {
         this.conwaysGameOfLiveWorldLattice = new ConwaysGameOfLiveWorldLattice(
             this.worldDimensions, this.random
         );
-        this.conwaysgameoflifePopulationCensusContainer = new conwaysgameoflifePopulationCensusContainer(
+        this.conwaysgameoflifePopulationCensusContainer = new ConwaysGameOfLifePopulationCensusContainer(
             computerKurzweilProperties
         );
         this.simulatedEvolutionParameter = new SimulatedEvolutionParameter();

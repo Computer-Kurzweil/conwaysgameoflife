@@ -22,7 +22,7 @@ import java.util.Stack;
 @Log4j2
 @ToString(callSuper = true, exclude={"statistics"})
 @EqualsAndHashCode(exclude={"statistics"})
-public class conwaysgameoflifePopulationCensusContainer implements Serializable {
+public class ConwaysGameOfLifePopulationCensusContainer implements Serializable {
 
     static final long serialVersionUID = 242L;
 
@@ -36,7 +36,7 @@ public class conwaysgameoflifePopulationCensusContainer implements Serializable 
     @Getter
     private volatile long worldIteration;
 
-    public conwaysgameoflifePopulationCensusContainer(
+    public ConwaysGameOfLifePopulationCensusContainer(
         ComputerKurzweilProperties p
     ) {
         this.queueMaxLength = p.getSimulatedevolution().getControl().getQueueMaxLength();

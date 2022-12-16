@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
-import org.woehlke.computer.kurzweil.simulated.evolution.model.census.conwaysgameoflifePopulationCensusContainer;
+import org.woehlke.computer.kurzweil.simulated.evolution.model.census.ConwaysGameOfLifePopulationCensusContainer;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.layouts.FlowLayoutCenter;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.SubTabImpl;
@@ -59,11 +59,11 @@ public class PopulationStatisticsElementsPanelLifeCycle extends SubTabImpl imple
 
     private final ConwaysGameOfLiveTab tab;
 
-    private final conwaysgameoflifePopulationCensusContainer censusContainer;
+    private final ConwaysGameOfLifePopulationCensusContainer censusContainer;
 
     public PopulationStatisticsElementsPanelLifeCycle(
         ConwaysGameOfLiveTab tab,
-        conwaysgameoflifePopulationCensusContainer censusContainer
+        ConwaysGameOfLifePopulationCensusContainer censusContainer
     ) {
         super(
             tab.getComputerKurzweilProperties().getConwaysgameoflife().getPopulation().getPanelPopulationStatistics(),

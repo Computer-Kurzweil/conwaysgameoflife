@@ -3,7 +3,7 @@ package org.woehlke.computer.kurzweil.simulated.evolution.view;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
-import org.woehlke.computer.kurzweil.simulated.evolution.control.SimulatedEvolutionController;
+import org.woehlke.computer.kurzweil.simulated.evolution.control.ConwaysGameOfLiveController;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.ConwaysGameOfLiveModel;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.world.SimulatedEvolutionParameter;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.SimulatedEvolutionCanvas;
@@ -29,7 +29,7 @@ import static javax.swing.SwingConstants.CENTER;
  * @author Thomas Woehlke
  *
  * @see ConwaysGameOfLiveModel
- * @see SimulatedEvolutionController
+ * @see ConwaysGameOfLiveController
  * @see SimulatedEvolutionCanvas
  * @see PopulationStatisticsElementsPanelLifeCycle
  *
@@ -81,7 +81,7 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
     /**
      * ControllerThread for Interachtions between Model and View (MVC-Pattern).
      */
-    private final SimulatedEvolutionController simulatedEvolutionController;
+    private final ConwaysGameOfLiveController conwaysGameOfLiveController;
 
     /**
      * The View for the World. Food and Cells are painted to the Canvas.
@@ -113,7 +113,7 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
             this,
             this.conwaysGameOfLiveModel.getConwaysgameoflifePopulationCensusContainer()
         );
-        this.simulatedEvolutionController = new SimulatedEvolutionController(
+        this.conwaysGameOfLiveController = new ConwaysGameOfLiveController(
             this.conwaysGameOfLiveModel, this.canvas, this.panelLifeCycle, this
         );
         String subTitle =  computerKurzweilProperties.getConwaysgameoflife().getView().getSubtitle();
@@ -165,7 +165,7 @@ public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
     }
 
     public void start() {
-        simulatedEvolutionController.start();
+        conwaysGameOfLiveController.start();
     }
 
     public void windowOpened(WindowEvent e) {
