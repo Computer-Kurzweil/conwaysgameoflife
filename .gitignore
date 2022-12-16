@@ -1,0 +1,9 @@
+*.iml
+.idea
+/.idea
+log.txt
+target
+/target
+release.properties
+pom.xml.releaseBackup
+/console.log
