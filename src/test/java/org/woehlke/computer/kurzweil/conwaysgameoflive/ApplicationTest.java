@@ -1,4 +1,4 @@
-package org.woehlke.computer.kurzweil.simulation.evolution;
+package org.woehlke.computer.kurzweil.conwaysgameoflive;
 
 
 import org.junit.jupiter.api.MethodOrderer;
