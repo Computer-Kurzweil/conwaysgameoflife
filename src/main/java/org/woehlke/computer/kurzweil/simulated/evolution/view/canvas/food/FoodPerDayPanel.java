@@ -3,7 +3,7 @@ package org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.food;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.SimulatedEvolutionTab;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.SubTabImpl;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.TabPanel;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.SimulatedEvolutionModel;
@@ -27,7 +27,7 @@ public class FoodPerDayPanel extends SubTabImpl implements Serializable {
     static final long serialVersionUID = 242L;
 
     @ToString.Exclude
-    private final SimulatedEvolutionTab tab;
+    private final ConwaysGameOfLiveTab tab;
     private final String foodPerDayBorderLabel;
     private final FoodPerDayLabel foodPerDayLabel;
     private final FoodPerDayTextField foodPerDayTextField;
@@ -35,7 +35,7 @@ public class FoodPerDayPanel extends SubTabImpl implements Serializable {
     private final FoodPerDayDecreaseButton foodPerDayDecreaseButton;
     private final SimulatedEvolutionModel tabModel;
 
-    public FoodPerDayPanel(SimulatedEvolutionTab tab) {
+    public FoodPerDayPanel(ConwaysGameOfLiveTab tab) {
         super(
             tab.getComputerKurzweilProperties().getSimulatedevolution().getFood().getFoodPerDayLabel(),
             tab.getComputerKurzweilProperties()

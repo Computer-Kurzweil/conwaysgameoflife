@@ -2,7 +2,7 @@ package org.woehlke.computer.kurzweil.simulated.evolution;
 
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.SimulatedEvolutionTab;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 
 /**
  * Class with main Method for Starting the Desktop Application.
@@ -10,27 +10,27 @@ import org.woehlke.computer.kurzweil.simulated.evolution.view.SimulatedEvolution
  * &copy; 2006 - 2008 Thomas Woehlke.
  * @author Thomas Woehlke
  *
- * @see SimulatedEvolutionTab
+ * @see ConwaysGameOfLiveTab
  *
  * @see <a href="https://thomas-woehlke.blogspot.com/2016/01/mandelbrot-set-drawn-by-turing-machine.html">Blog Article</a>
  * @see <a href="https://github.com/Computer-Kurzweil/simulated-evolution">Github Repository</a>
  * @see <a href="https://java.woehlke.org/simulated-evolution/">Maven Project Repository</a>
  */
 @Log4j2
-public class SimulatedEvolutionApplication {
+public class ConwaysGameOfLiveApplication {
 
-    private final SimulatedEvolutionTab simulatedEvolutionTab;
+    private final ConwaysGameOfLiveTab conwaysGameOfLiveTab;
 
-    private SimulatedEvolutionApplication() {
+    private ConwaysGameOfLiveApplication() {
         String configFileName = "application.yml";
-        String jarFilePath = "target/simulatedevolution.jar";
+        String jarFilePath = "target/conwaysgameoflife.jar";
         ComputerKurzweilProperties properties = ComputerKurzweilProperties.propertiesFactory(configFileName, jarFilePath);
-        this.simulatedEvolutionTab = new SimulatedEvolutionTab(properties);
+        this.conwaysGameOfLiveTab = new ConwaysGameOfLiveTab(properties);
 
     }
 
     public void start(){
-        simulatedEvolutionTab.start();
+        conwaysGameOfLiveTab.start();
     }
 
     /**
@@ -38,7 +38,7 @@ public class SimulatedEvolutionApplication {
      * @param args CLI Parameter
      */
     public static void main(String[] args) {
-        SimulatedEvolutionApplication application = new SimulatedEvolutionApplication();
+        ConwaysGameOfLiveApplication application = new ConwaysGameOfLiveApplication();
         application.start();
     }
 }

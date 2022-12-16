@@ -1043,7 +1043,7 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>org.woehlke.computer.kurzweil.simulated.evolution.SimulatedEvolutionApplication</mainClass>
+                    <mainClass>org.woehlke.computer.kurzweil.simulated.evolution.ConwaysGameOfLiveApplication</mainClass>
                 </configuration>
             </plugin>
             <plugin>

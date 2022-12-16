@@ -6,7 +6,7 @@ import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.census.SimulatedEvolutionPopulationCensusContainer;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.SimulatedEvolutionTab;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.layouts.FlowLayoutCenter;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.SubTabImpl;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.census.SimulatedEvolutionPopulationCensus;
@@ -57,30 +57,30 @@ public class PopulationStatisticsElementsPanelLifeCycle extends SubTabImpl imple
     private final FlowLayoutCenter layout;
     private final FlowLayout layoutSubPanel;
 
-    private final SimulatedEvolutionTab tab;
+    private final ConwaysGameOfLiveTab tab;
 
-    private final SimulatedEvolutionPopulationCensusContainer simulatedEvolutionPopulationCensusContainer;
+    private final SimulatedEvolutionPopulationCensusContainer censusContainer;
 
     public PopulationStatisticsElementsPanelLifeCycle(
-        SimulatedEvolutionTab tab,
-        SimulatedEvolutionPopulationCensusContainer simulatedEvolutionPopulationCensusContainer
+        ConwaysGameOfLiveTab tab,
+        SimulatedEvolutionPopulationCensusContainer censusContainer
     ) {
         super(
-            tab.getComputerKurzweilProperties().getSimulatedevolution().getPopulation().getPanelPopulationStatistics(),
+            tab.getComputerKurzweilProperties().getConwaysgameoflife().getPopulation().getPanelPopulationStatistics(),
             tab.getComputerKurzweilProperties()
         );
         this.tab = tab;
-        this.simulatedEvolutionPopulationCensusContainer = simulatedEvolutionPopulationCensusContainer;
+        this.censusContainer = censusContainer;
         this.layoutSubPanel = new FlowLayout();
         this.setLayout(this.layoutSubPanel);
         this.borderLabel = this.tab.getComputerKurzweilProperties()
-            .getSimulatedevolution().getPopulation().getPanelPopulationStatistics();
+            .getConwaysgameoflife().getPopulation().getPanelPopulationStatistics();
         this.layout = new FlowLayoutCenter();
         this.border = this.getDoubleBorder(this.borderLabel);
         this.setLayout(this.layout);
         this.setBorder(this.border);
-        ComputerKurzweilProperties.SimulatedEvolution.Population cfg =
-            this.tab.getComputerKurzweilProperties().getSimulatedevolution().getPopulation();
+        ComputerKurzweilProperties.Conwaysgameoflife.Population cfg =
+            this.tab.getComputerKurzweilProperties().getConwaysgameoflife().getPopulation();
         initialPopulation = cfg.getInitialPopulation();
         youngCellsLabel = cfg.getYoungCellsLabel();
         youngAndFatCellsLabel = cfg.getYoungAndFatCellsLabel();
@@ -104,7 +104,7 @@ public class PopulationStatisticsElementsPanelLifeCycle extends SubTabImpl imple
     }
 
     public void update() {
-        SimulatedEvolutionPopulationCensus population = this.simulatedEvolutionPopulationCensusContainer.peek();
+        SimulatedEvolutionPopulationCensus population = this.censusContainer.peek();
         youngCellsElement.setText(population.getYoungCells());
         youngAndFatCellsElement.setText(population.getYoungAndFatCells());
         fullAgeCellsElement.setText(population.getFullAgeCells());

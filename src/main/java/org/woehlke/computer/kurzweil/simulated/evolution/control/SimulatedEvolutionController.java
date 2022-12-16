@@ -1,7 +1,7 @@
 package org.woehlke.computer.kurzweil.simulated.evolution.control;
 
 import lombok.extern.log4j.Log4j2;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.SimulatedEvolutionTab;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.SimulatedEvolutionCanvas;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.SimulatedEvolutionModel;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.population.PopulationStatisticsElementsPanelLifeCycle;
@@ -36,7 +36,7 @@ public class SimulatedEvolutionController extends Thread implements Runnable, Se
      */
     private final SimulatedEvolutionCanvas canvas;
     private final PopulationStatisticsElementsPanelLifeCycle panelLifeCycle;
-    private final SimulatedEvolutionTab tab;
+    private final ConwaysGameOfLiveTab tab;
 
     /**
      * Time to Wait in ms.
@@ -52,12 +52,12 @@ public class SimulatedEvolutionController extends Thread implements Runnable, Se
         SimulatedEvolutionModel simulatedEvolutionModel,
         SimulatedEvolutionCanvas canvas,
         PopulationStatisticsElementsPanelLifeCycle panelLifeCycle,
-        SimulatedEvolutionTab simulatedEvolutionTab
+        ConwaysGameOfLiveTab conwaysGameOfLiveTab
     ) {
         this.simulatedEvolutionModel = simulatedEvolutionModel;
         this.canvas = canvas;
         this.panelLifeCycle = panelLifeCycle;
-        this.tab = simulatedEvolutionTab;
+        this.tab = conwaysGameOfLiveTab;
         this.timeToWait = this.tab.getComputerKurzweilProperties().getSimulatedevolution()
             .getControl().getThreadSleepTime();
         mySemaphore = Boolean.TRUE;

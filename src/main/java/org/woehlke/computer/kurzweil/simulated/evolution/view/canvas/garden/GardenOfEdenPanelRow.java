@@ -3,7 +3,7 @@ package org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.garden;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.SimulatedEvolutionTab;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.SubTabImpl;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.TabPanel;
 import org.woehlke.computer.kurzweil.simulated.evolution.model.SimulatedEvolutionModel;
@@ -27,14 +27,14 @@ public class GardenOfEdenPanelRow extends SubTabImpl implements Serializable {
     static final long serialVersionUID = 242L;
 
     @ToString.Exclude
-    private final SimulatedEvolutionTab tab;
+    private final ConwaysGameOfLiveTab tab;
     @ToString.Exclude
     private final SimulatedEvolutionModel tabModel;
     private final GardenOfEdenCheckBox gardenOfEdenEnabled;
     private final GardenOfEdenToggleButton buttonToggleGardenOfEden;
     //private final GardenOfEdenPanel gardenOfEdenPanel;
 
-    public GardenOfEdenPanelRow(SimulatedEvolutionTab tab) {
+    public GardenOfEdenPanelRow(ConwaysGameOfLiveTab tab) {
         super("Garden of Eden",tab.getComputerKurzweilProperties());
         this.tab = tab;
         this.tabModel = this.tab.getSimulatedEvolutionModel();

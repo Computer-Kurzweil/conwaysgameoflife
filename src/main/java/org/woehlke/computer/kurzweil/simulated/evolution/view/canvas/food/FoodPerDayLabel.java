@@ -3,7 +3,7 @@ package org.woehlke.computer.kurzweil.simulated.evolution.view.canvas.food;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.SimulatedEvolutionTab;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 
 import javax.swing.*;
 import java.io.Serializable;
@@ -25,10 +25,10 @@ public class FoodPerDayLabel extends JLabel implements Serializable {
     static final long serialVersionUID = 242L;
 
     @ToString.Exclude
-    private final SimulatedEvolutionTab tab;
+    private final ConwaysGameOfLiveTab tab;
     private final String foodPerDayLabelString;
 
-    public FoodPerDayLabel(SimulatedEvolutionTab tab) {
+    public FoodPerDayLabel(ConwaysGameOfLiveTab tab) {
         super(
             tab.getComputerKurzweilProperties().getSimulatedevolution().getFood().getFoodPerDayLabel()
         );

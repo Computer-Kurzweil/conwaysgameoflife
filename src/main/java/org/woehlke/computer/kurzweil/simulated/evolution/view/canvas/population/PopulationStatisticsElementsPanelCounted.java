@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.log4j.Log4j2;
 import org.woehlke.computer.kurzweil.simulated.evolution.config.ComputerKurzweilProperties;
-import org.woehlke.computer.kurzweil.simulated.evolution.view.SimulatedEvolutionTab;
+import org.woehlke.computer.kurzweil.simulated.evolution.view.ConwaysGameOfLiveTab;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.layouts.FlowLayoutCenter;
 import org.woehlke.computer.kurzweil.simulated.evolution.view.tabs.SubTabImpl;
 
@@ -45,13 +45,13 @@ public class PopulationStatisticsElementsPanelCounted extends SubTabImpl impleme
     private final String generationOldestLabel;
     private final String generationYoungestLabel;
 
-    private final SimulatedEvolutionTab tab;
+    private final ConwaysGameOfLiveTab tab;
     private final CompoundBorder border;
     private final FlowLayoutCenter layout;
     private final FlowLayout layoutSubPanel;
 
     @Deprecated
-    public PopulationStatisticsElementsPanelCounted(SimulatedEvolutionTab tab) {
+    public PopulationStatisticsElementsPanelCounted(ConwaysGameOfLiveTab tab) {
         super(
             tab.getComputerKurzweilProperties().getSimulatedevolution().getPopulation().getPanelPopulationStatistics(),
             tab.getComputerKurzweilProperties()

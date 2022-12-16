@@ -43,6 +43,9 @@ public class ComputerKurzweilProperties {
     public SimulatedEvolution simulatedevolution = new SimulatedEvolution();
 
     @Valid
+    public Conwaysgameoflife conwaysgameoflife = new Conwaysgameoflife();
+
+    @Valid
     public Cca cca = new Cca();
 
     @Valid
@@ -375,6 +378,198 @@ public class ComputerKurzweilProperties {
             private Integer gardenOfEdenLatticeDivisorPadding;
         }
     }
+
+
+    ////@Validated
+    @ToString
+    @Getter
+    @Setter
+    public static class Conwaysgameoflife {
+
+        @Valid
+        public View view = new View();
+
+        @Valid
+        public Control control = new Control();
+
+        @Valid
+        public CellConf cellConf = new CellConf();
+
+        @Valid
+        public Population population = new Population();
+
+        @Valid
+        public Food food = new Food();
+
+        @Valid
+        public GardenOfEden gardenOfEden = new GardenOfEden();
+
+        ////@Validated
+        @ToString
+        @Getter
+        @Setter
+        public static class View {
+
+            @NotBlank
+            private String title;
+
+            @NotBlank
+            private String subtitle;
+
+            @NotBlank
+            private String copyright;
+
+            @NotNull
+            private Integer width;
+
+            @NotNull
+            private Integer height;
+
+            @NotNull
+            private Integer scale;
+        }
+
+        ////@Validated
+        @ToString
+        @Getter
+        @Setter
+        public static class Control {
+
+            @NotNull
+            private Integer threadSleepTime;
+
+            @NotNull
+            private Integer exitStatus;
+
+            @NotNull
+            private Integer queueMaxLength;
+        }
+
+        ////@Validated
+        @ToString
+        @Getter
+        @Setter
+        public static class CellConf {
+
+            @NotNull
+            private Integer fatMax;
+
+            @NotNull
+            private Integer fatHungerMax;
+
+            @NotNull
+            private Integer fatMinimumForSex;
+
+            @NotNull
+            private Integer fatAtBirth;
+
+            @NotNull
+            private Integer fatPerFood;
+
+            @NotNull
+            private Integer ageOfAdulthood;
+
+            @NotNull
+            private Integer ageOld;
+
+            @NotNull
+            private Integer ageMax;
+        }
+
+        ////@Validated
+        @ToString
+        @Getter
+        @Setter
+        public static class Population {
+
+            @NotNull
+            private Integer initialPopulation;
+
+            @NotBlank
+            private String panelPopulationStatistics;
+
+            @NotBlank
+            private String youngCellsLabel;
+
+            @NotBlank
+            private String youngAndFatCellsLabel;
+
+            @NotBlank
+            private String fullAgeCellsLabel;
+
+            @NotBlank
+            private String hungryCellsLabel;
+
+            @NotBlank
+            private String oldCellsLabel;
+
+            @NotBlank
+            private String populationLabel;
+
+            @NotBlank
+            private String generationOldestLabel;
+
+            @NotBlank
+            private String generationYoungestLabel;
+        }
+
+        ////@Validated
+        @ToString
+        @Getter
+        @Setter
+        public static class Food {
+
+            @NotNull
+            private Integer foodPerDay;
+
+            @NotNull
+            private Integer foodPerDayFieldColumns;
+
+            @NotBlank
+            private String foodPerDayLabel;
+
+            @NotBlank
+            private String foodPerDayBorderLabel;
+
+            @NotBlank
+            private String buttonFoodPerDayIncrease;
+
+            @NotBlank
+            private String buttonFoodPerDayDecrease;
+
+            @NotBlank
+            private String panelFood;
+        }
+
+        ////@Validated
+        @ToString
+        @Getter
+        @Setter
+        public static class GardenOfEden {
+
+            @NotBlank
+            private String panelGardenOfEden;
+
+            @NotNull
+            private Boolean gardenOfEdenEnabled;
+
+            @NotBlank
+            private String gardenOfEdenEnabledString;
+
+            @NotBlank
+            private String gardenOfEdenEnabledToggleButton;
+
+            @NotNull
+            private Integer foodPerDay;
+
+            @NotNull
+            private Integer gardenOfEdenLatticeDivisor;
+
+            @NotNull
+            private Integer gardenOfEdenLatticeDivisorPadding;
+        }
+    }
+
 
     ////@Validated
     @ToString

@@ -49,7 +49,7 @@ import static javax.swing.SwingConstants.CENTER;
  */
 @Log4j2
 @Getter
-public class SimulatedEvolutionTab extends JFrame implements MenuContainer,
+public class ConwaysGameOfLiveTab extends JFrame implements MenuContainer,
     WindowListener, ActionListener, Serializable, ImageObserver, Accessible {
 
     static final long serialVersionUID = 242L;
@@ -102,7 +102,7 @@ public class SimulatedEvolutionTab extends JFrame implements MenuContainer,
     private volatile Rectangle rectangleBounds;
     private volatile Dimension dimensionSize;
 
-    public SimulatedEvolutionTab(ComputerKurzweilProperties computerKurzweilProperties) {
+    public ConwaysGameOfLiveTab(ComputerKurzweilProperties computerKurzweilProperties) {
         super(TITLE);
         this.computerKurzweilProperties = computerKurzweilProperties;
         this.simulatedEvolutionModel = new SimulatedEvolutionModel(
@@ -116,8 +116,8 @@ public class SimulatedEvolutionTab extends JFrame implements MenuContainer,
         this.simulatedEvolutionController = new SimulatedEvolutionController(
             this.simulatedEvolutionModel, this.canvas, this.panelLifeCycle, this
         );
-        String subTitle =  computerKurzweilProperties.getSimulatedevolution().getView().getSubtitle();
-        String copyright =  computerKurzweilProperties.getSimulatedevolution().getView().getCopyright();
+        String subTitle =  computerKurzweilProperties.getConwaysgameoflife().getView().getSubtitle();
+        String copyright =  computerKurzweilProperties.getConwaysgameoflife().getView().getCopyright();
         this.subTitleLabel = new JLabel(subTitle, CENTER);
         this.copyrightLabel = new JLabel(copyright, CENTER);
         this.simulatedEvolutionParameter = new SimulatedEvolutionParameter();

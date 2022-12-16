@@ -81,9 +81,9 @@ public class SimulatedEvolutionModel implements Serializable {
 
     public SimulatedEvolutionModel(ComputerKurzweilProperties computerKurzweilProperties) {
         this.computerKurzweilProperties = computerKurzweilProperties;
-        int scale = this.computerKurzweilProperties.getSimulatedevolution().getView().getScale();
-        int width = scale * this.computerKurzweilProperties.getSimulatedevolution().getView().getWidth();
-        int height = scale * this.computerKurzweilProperties.getSimulatedevolution().getView().getHeight();
+        int scale = this.computerKurzweilProperties.getConwaysgameoflife().getView().getScale();
+        int width = scale * this.computerKurzweilProperties.getConwaysgameoflife().getView().getWidth();
+        int height = scale * this.computerKurzweilProperties.getConwaysgameoflife().getView().getHeight();
         this.worldDimensions = new WorldPoint(width,height);
         long seed = new Date().getTime();
         this.random = new Random(seed);
