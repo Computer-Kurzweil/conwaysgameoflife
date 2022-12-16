@@ -40,9 +40,8 @@ import static javax.swing.SwingConstants.CENTER;
  * @see java.awt.image.ImageObserver
  * @see java.awt.event.WindowListener
  *
- * @see <a href="https://thomas-woehlke.blogspot.com/2016/01/mandelbrot-set-drawn-by-turing-machine.html">Blog Article</a>
- * @see <a href="https://github.com/Computer-Kurzweil/simulated-evolution">Github Repository</a>
- * @see <a href="https://java.woehlke.org/simulated-evolution/">Maven Project Repository</a>
+ * @see <a href="https://github.com/Computer-Kurzweil/conwaysgameoflife">Github Repository</a>
+ * @see <a href="https://java.woehlke.org/conwaysgameoflife/">Maven Project Repository</a>
  *
  * Date: 04.02.2006
  * Time: 18:47:46

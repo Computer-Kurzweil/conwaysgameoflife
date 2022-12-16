@@ -24,9 +24,8 @@ import static org.woehlke.computer.kurzweil.conwaysgameoflive.model.cell.LifeCyc
  * &copy; 2006 - 2008 Thomas Woehlke.
  * @author Thomas Woehlke
  *
- * @see <a href="https://thomas-woehlke.blogspot.com/2016/01/mandelbrot-set-drawn-by-turing-machine.html">Blog Article</a>
- * @see <a href="https://github.com/Computer-Kurzweil/simulated-evolution">Github Repository</a>
- * @see <a href="https://java.woehlke.org/simulated-evolution/">Maven Project Repository</a>
+ * @see <a href="https://github.com/Computer-Kurzweil/conwaysgameoflife">Github Repository</a>
+ * @see <a href="https://java.woehlke.org/conwaysgameoflife/">Maven Project Repository</a>
  */
 @Log4j2
 @Getter
