@@ -31,12 +31,12 @@
         </site>
         <snapshotRepository>
             <id>snapshots</id>
-            <name>tw-thinkpad-snapshots</name>
+            <name>libs-snapshots-local</name>
             <url>file://${user.home}/public_html/java/libs-snapshots-local/</url>
         </snapshotRepository>
         <repository>
             <id>central</id>
-            <name>tw-thinkpad-releases</name>
+            <name>libs-release-local</name>
             <url>file://${user.home}/public_html/java/libs-release-local/</url>
         </repository>
     </distributionManagement>

@@ -1,10 +1,9 @@
-# Simulated Evolution
+# Conways Game of Life
 
 
-![Java CI with Maven](https://github.com/Computer-Kurzweil/simulated-evolution/workflows/Java%20CI%20with%20Maven/badge.svg)
-[![Build Status](https://travis-ci.com/Computer-Kurzweil/simulated-evolution.svg?branch=master)](https://travis-ci.com/Computer-Kurzweil/simulated-evolution)
+![Java CI with Maven](https://github.com/Computer-Kurzweil/conwaysgameoflife/workflows/Java%20CI%20with%20Maven/badge.svg)
 
-**Artificial Life Simulation of Bacteria Motion depending on DNA**
+**The famous Cellular Automata by John Horton Conway**
 
 ## Abstract
 
@@ -17,8 +16,8 @@ If a cell doesn't eat enough, it will first stand still and after a while it die
 ## Run the Desktop Application
 
 ```
-git clone https://github.com/Computer-Kurzweil/simulated-evolution.git
-cd simulated-evolution
+git clone https://github.com/Computer-Kurzweil/conwaysgameoflife.git
+cd conwaysgameoflife
 ./mvnw
 ```
 
@@ -34,8 +33,5 @@ cd simulated-evolution
 
 
 ## Repositories
-* [Github Repository](https://github.com/Computer-Kurzweil/simulated-evolution)
-* [Maven Project Reports](https://java.woehlke.org/simulated-evolution/readme2.html)
-
-## Blog Article
-[http://thomas-woehlke.blogspot.de/2016/01/simulated-evolution-artificial-life-and.html](http://thomas-woehlke.blogspot.de/2016/01/simulated-evolution-artificial-life-and.html)
+* [Github Repository](https://github.com/Computer-Kurzweil/conwaysgameoflife)
+* [Maven Project Reports](https://java.woehlke.org/conwaysgameoflife)

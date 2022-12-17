@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Reflow Maven Skin"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/DECORATION/1.3.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd"
+         name="Computer Kurzweil">
     <skin>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-default-skin</artifactId>
@@ -20,21 +20,20 @@
     </poweredBy>
     <body>
         <links>
-            <item name="GitHub project" href="https://github.com/Computer-Kurzweil/simulated-evolution/" />
+            <item name="GitHub project" href="https://github.com/Computer-Kurzweil/conwaysgameoflife/" />
         </links>
         <breadcrumbs>
-            <item name="Simulated Evolution" href="index.html" />
+            <item name="Conways Game of Life" href="index.html" />
         </breadcrumbs>
         <menu name="Main" inherit="top">
             <item name="Home" href="index.html" />
-            <item name="GitHub project" href="https://github.com/Computer-Kurzweil/simulated-evolution" />
-            <item name="Blog" href="https://thomas-woehlke.blogspot.de/2016/01/simulated-evolution-artificial-life-and.html" />
+            <item name="GitHub project" href="https://github.com/Computer-Kurzweil/conwaysgameoflife" />
             <item name="Copyright" href="LICENSE.code.html" />
             <item name="License" href="LICENSE.html" />
         </menu>
         <menu name="Contribute" inherit="bottom">
-            <item name="Issues" href="https://github.com/Computer-Kurzweil/simulated-evolution/issues/" />
-            <item name="Fork on GitHub" href="https://github.com/Computer-Kurzweil/simulated-evolution/" />
+            <item name="Issues" href="https://github.com/Computer-Kurzweil/conwaysgameoflife/issues/" />
+            <item name="Fork on GitHub" href="https://github.com/Computer-Kurzweil/conwaysgameoflife/" />
             <item name="Donate" href="https://www.paypal.me/ThomasWoehlke" />
         </menu>
         <menu name="Maven Reports" ref="reports" inherit="bottom"/>
