@@ -13,9 +13,9 @@
     <inceptionYear>2022</inceptionYear>
 
     <scm>
-        <url>https://github.com/Computer-Kurzweil/conwaysgameoflife.git</url>
         <connection>scm:git:git@github.com:Computer-Kurzweil/conwaysgameoflife.git</connection>
         <developerConnection>scm:git:git@github.com:Computer-Kurzweil/conwaysgameoflife.git</developerConnection>
+        <url>https://github.com/Computer-Kurzweil/conwaysgameoflife/tree/${project.scm.tag}</url>
         <tag>HEAD</tag>
     </scm>
 
