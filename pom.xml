@@ -14,7 +14,7 @@
 
     <name>Conways Game of Life</name>
     <description>The famous Cellular Automata by John Horton Conway</description>
-    <url>https://java.woehlke.org/conwaysgameoflife</url>
+    <url>https://java.woehlke.org/kurzweil/conwaysgameoflife</url>
     <inceptionYear>2022</inceptionYear>
 
     <scm>
@@ -32,7 +32,7 @@
     <distributionManagement>
         <site>
             <id>simulatedevolution.local</id>
-            <url>file://${user.home}/public_html/java/conwaysgameoflife/</url>
+            <url>file://${user.home}/public_html/java/kurzweil/conwaysgameoflife/</url>
         </site>
         <snapshotRepository>
             <id>snapshots</id>
